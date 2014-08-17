@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bieber Art Map</title>
+         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+      
+      
+        <meta name="description" content="A Bieber Art Database"/>
+        <link rel="image_src" href="img/bieberart.png" />
+
+
+        <meta property="og:image" content="http://www.tomgalle.com/thumbnails/bieberart.png" />
+
+        <meta property="og:title" content="Bieber Art Map"/>
+        <meta property="og:description" content="A Bieber Art Database"/>
+        
+        <meta property="og:type" content="website"/>
+  
+
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+
+      .logo {
+          right: 0;
+          left: 0;
+          position: absolute;
+          top: 32px;
+          z-index: 100;
+          width: 500px;
+          height: 100px;
+          margin: 0 auto;
+          text-align: center;
+      }
+
+
+      .header h1 {
+          right: 0;
+          left: 0;
+          position: absolute;
+          top: 32px;
+          z-index: 100;
+          margin: 0 auto;
+          font-size: 68px;
+          text-align: center;
+    
+      }
+
+
+      h2 {
+          right: 0;
+          left: 0;
+          position: absolute;
+          top: 118px;
+          z-index: 100;
+          margin: 0 auto;
+          text-align: center;
+
+      }
+
+      .share {
+        width: 192px;
+        height: 20px;
+        position: fixed;
+        top: 160px;
+        left: 50%;
+        margin-left: -96px;
+        z-index: 100;
+        
+      }
+
+      .fb-like {
+        float: left;
+      }
+
+      .tweet {
+        float: right;
+      }
+      
+      .names {
+        width: 200px;
+        height: 30px;
+        position: fixed;
+        text-align: center;
+        bottom: 10px;
+        margin-left: -100px;
+        left: 50%;
+        z-index: 100;
+        color: gray;
+        font-size: 15px;
+      }
+
+      .names a {
+        color:gray;
+        text-decoration: none;
+        border-bottom: 1px solid gray;
+      }
+
+
+
+    </style>
+
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsU-RluCQ5E25ix8j-u2GcMV1jXXER3Ok&sensor=true">
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+    <script type="text/javascript">
+
+
+
+
+        function initialize() {
+       // var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+        var mapOptions = {
+          zoom: 3,
+          center: new google.maps.LatLng(38, -20)
+        };
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var image = 'img/bieberhead.png';
+
+
+
+
+
+        // marker rio bieberart
+
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Hotel Nacional, Rio De Janeiro, Brasil</h1>'+
+            '<div id="bodyContent">'+
+            '<img src="img/_rio7.jpg"></img>'+
+            '<img src="img/_rio5.jpg"></img>'+
+            '<img src="img/_rio6.jpg"></img>'+   
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 500
+
+        });
+
+        var marker1 = new google.maps.Marker({
+            position: new google.maps.LatLng(-22.952229, -43.216095),
+            map: map,
+            title: 'Hotel Nacional, Rio De Janeiro, Brasil'
+        });
+
+
+          google.maps.event.addListener(marker1, 'click', function() {
+          infowindow.open(map,marker1);
+ 
+        });
+
+        google.maps.event.addListener(marker1, 'click', function() {
+          infowindow.open(map,marker1);
+          infowindow2.close();
+          infowindow3.close();
+          infowindow4.close();
+          infowindow5.close();
+          infowindow6.close();
+
+        });
+
+
+
+
+
+        // marker LA bieberart
+
+        var contentString2 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Regal L.A. (Belieber Premiere)</h1>'+
+            '<div id="bodyContent">'+
+            '<img src="img/_la1.jpg"></img>'+
+            '<img src="img/_la2.jpg"></img>'+
+            '<img src="img/_la3.png"></img>'+
+            '<img src="img/_la4.jpg"></img>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow2 = new google.maps.InfoWindow({
+            content: contentString2,
+            maxWidth: 500
+        });
+
+        var marker2 = new google.maps.Marker({
+            position: new google.maps.LatLng(34.046312, -118.267289),
+            map: map,
+            title: 'Regal L.A. (Belieber Premiere)'
+        });
+
+
+        google.maps.event.addListener(marker2, 'click', function() {
+          infowindow2.open(map,marker2);
+          infowindow.close();
+          infowindow3.close();
+          infowindow4.close();
+          infowindow5.close();
+          infowindow6.close();
+        });
+
+
+
+
+
+        // marker syd bieberart
+
+        var contentString3 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">QT RESORT HOTEL,Gold Coast  Sydney</h1>'+
+            '<div id="bodyContent">'+
+            '<img src="img/_syd1.jpg"></img>'+
+            '<img src="img/_syd2.jpg"></img>'+
+            '<img src="img/_syd3.png"></img>'+
+            '<img src="img/_syd4.jpg"></img>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow3 = new google.maps.InfoWindow({
+            content: contentString3,
+            maxWidth: 500
+        });
+
+        var marker3 = new google.maps.Marker({
+            position: new google.maps.LatLng(-27.994345, 153.428781),
+            map: map,
+            title: 'QT RESORT HOTEL,Gold Coast Sydney'
+        });
+
+
+        google.maps.event.addListener(marker3, 'click', function() {
+          infowindow3.open(map,marker3);
+          infowindow2.close();
+          infowindow.close();
+          infowindow4.close();
+          infowindow5.close();
+          infowindow6.close();
+        });
+
+
+
+
+        // marker home bieberart
+
+        var contentString4 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Justins Santa Monica Home</h1>'+
+            '<div id="bodyContent">'+
+            '<img src="img/_home1.jpg"></img>'+  
+            '</div>'+
+            '</div>';
+
+        var infowindow4 = new google.maps.InfoWindow({
+            content: contentString4,
+            maxWidth: 500
+        });
+
+        var marker4 = new google.maps.Marker({
+            position: new google.maps.LatLng(34.128538, -118.67143),
+            map: map,
+            title: 'Justins Home'
+        });
+
+        google.maps.event.addListener(marker4, 'click', function() {
+          infowindow4.open(map,marker4);
+          infowindow2.close();
+          infowindow3.close();
+          infowindow.close();
+          infowindow5.close();
+          infowindow6.close();
+        });
+
+
+
+
+        // marker miami bieberart
+
+        var contentString5 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Skate park South Beach Miami</h1>'+
+            '<div id="bodyContent">'+
+            '<img src="img/_miami1.jpg"></img>'+
+            '<img src="img/_miami2.png"></img>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow5 = new google.maps.InfoWindow({
+            content: contentString5,
+            maxWidth: 500
+        });
+
+        var marker5 = new google.maps.Marker({
+            position: new google.maps.LatLng(25.783044, -80.131558),
+            map: map,
+            title: 'Skate park South Beach Miami'
+        });
+
+        google.maps.event.addListener(marker5, 'click', function() {
+          infowindow5.open(map,marker5);
+          infowindow2.close();
+          infowindow3.close();
+          infowindow4.close();
+          infowindow.close();
+          infowindow6.close();
+        });
+
+
+
+        // marker miami bieberart
+
+        var contentString6 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">The Circle House Studios</h1>'+
+            '<div id="bodyContent">'+
+            '<img src="img/_circle1.jpg"></img>'+
+            '<img src="img/_circle2.jpg"></img>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow6 = new google.maps.InfoWindow({
+            content: contentString6,
+            maxWidth: 600
+        });
+
+        var marker6 = new google.maps.Marker({
+            position: new google.maps.LatLng(25.927384, -80.154793),
+            map: map,
+            title: 'The Circle House Studios'
+        });
+
+
+        google.maps.event.addListener(marker6, 'click', function() {
+         infowindow6.open(map,marker6);
+          infowindow2.close();
+          infowindow3.close();
+          infowindow4.close();
+          infowindow5.close();
+          infowindow.close();
+        });
+
+      }
+
+
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+    </script>
+
+  </head>
+  
+  <body>
+  
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=329962340406576";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+    <div class="header"><h1>Bieber Art Map</h1></div>
+
+<!--     <div class="logo"><img src="img/logo2.png"></img></div>
+ -->    <h2>A Justin Bieber Art Database</h2>
+
+       <div class="names">Made by 
+          <a href="http://twitter.com/bobjeusette/" target="_blank">Bob</a> &amp;
+          <a href="http://twitter.com/tomgalle" target="_blank">Tom</a>  &nbsp;•&nbsp;
+          <a href="mailto:galle.tom@gmail.com?Subject=Submit Bieber Art" target="_top">Submit</a>
+       </div>
+
+
+    <div class="share">
+
+        <div class="fb-like" data-href="http://bieberartmap.org/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>        
+        
+        <div class="tweet">
+           <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bieberartmap.org/" data-text="A Bieber Art Database" data-hashtags="bieberart">Tweet</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+      
+    </div>
+
+
+    <div id="map-canvas"/>
+  
+
+  </body>
+</html>
+
+
+
+
+
